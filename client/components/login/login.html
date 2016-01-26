@@ -5,8 +5,8 @@
         {{error}}
       </div>
     {{/if}}
-    <div class="ui login-password form">
 
+    <div class="ui login-password form" style="display:none">
       <div class="field">
         <label> Username </label>
         <input type="text" id='username' placeholder="Username">
@@ -34,5 +34,12 @@
     <br>
     <button id="login-certauth" class="fluid certauth push button"> Login with MIT Certificate</button>
     {{/if}}
+
+    <div style="text-align: center; margin-top: 10px">
+      <a id="showPasswordLogin" href="#">login with non-MIT username/password</a>
+    </div>
   </div>
+</template>
+
+<template name="passwordlogin">
 </template>

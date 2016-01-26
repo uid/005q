@@ -1,5 +1,5 @@
 Meteor.startup(function() {
-  //CertAuth.login();
+  CertAuth.login();
 });
 
 Template.login.onCreated(function(){
@@ -7,6 +7,10 @@ Template.login.onCreated(function(){
 });
 
 Template.login.events({
+  'click #showPasswordLogin': function(){
+    $("#showPasswordLogin").css("display", "none");
+    $(".login-password.form").css("display", "block");
+  },
   'click #login-github': function(){
     Meteor.loginWithGithub({
       loginStyle: 'redirect'
