@@ -16,6 +16,8 @@ Template.ticketPanel.helpers({
     return this.status === status;
   },
   greeting: function(){
+    return "";
+    /*
     // Return the first name
     if (Meteor.user().profile.name){
       return "Hey, " + Meteor.user().profile.name.split(" ")[0] + "!";
@@ -26,7 +28,7 @@ Template.ticketPanel.helpers({
     }
 
     return "Hey there!";
-
+    */
   },
   queueEnabled: function(){
     var settings = Settings.findOne({});

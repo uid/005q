@@ -26,9 +26,12 @@ Template.navAccount.events({
 
 Template.navAccount.helpers({
   profile: function(){
+    return Meteor.user().username;
+    /*
     if (Meteor.user().profile.name){
       return Meteor.user().profile.name.split(" ")[0];
     }
     return "Profile";
+    */
   }
 });
