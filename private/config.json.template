@@ -18,9 +18,13 @@
     "clientId": "google-client-id",
     "secret": "google-secret"
   },
+  "certauth": {
+    "enable": true
+  },
   "settings": {
     "queueEnabled": true,
     "expirationDelay": 1800000
   },
-  "defaultMentor": true
+  "initialMentors": [],
+  "defaultMentor": false
 }

@@ -21,20 +21,29 @@ Meteor.startup(function(){
   Accounts.onCreateUser(function(options, user){
     if (options.profile){
       user.profile = options.profile;
-
-      if (config.defaultMentor){
-        user.profile.mentor = true;
-      }
     }
 
     if (!user.username) {
         try {
-            var email = user.emails[0].address;
-            user.profile.email = email;
-            user.username = email.match(/^([^@]+)@/)[1];
+          var email = user.emails[0].address;
+          user.profile.email = email;
+          user.username = email.match(/^([^@]+)@/)[1];
         } catch (e) {
-            throw new Error("can't create new user: no username, no email address")
+          throw new Error("can't create new user: no username, no email address")
         }
+    }
+
+    if (config.defaultMentor) {
+      user.profile.mentor = true;
+    }
+
+    if (config.initialMentors) {
+      for (var i = 0; i < config.initialMentors.length; ++i) {
+        if (config.initialMentors[i] == user.username) {
+          user.profile.mentor = true;
+          break;
+        }
+      }
     }
 
     return user;
