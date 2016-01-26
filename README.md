@@ -15,19 +15,15 @@
     + change the admin password to what we usually use
     + put the usernames of all the staff in initialMentors, e.g. ["rcm", "maxg"]
 
-5. Run
+5. To start up the deployment:
 
       meteor deploy 005q.meteor.com --settings settings.json
 
-to start up the deployment.
-
-6. Run
+6. To add the 6.005 organization as an authorized maintainer of the deployment:
 
       meteor authorized 005q.meteor.com --add mit6005
 
-to add the 6.005 organization as an authorized maintainer of the deployment. 
-
-7. Visit 005q.meteor.com and log in with your own MIT certificate.
+7. Visit http://005q.meteor.com and log in with your own MIT certificate.
 
 
 HELPq
