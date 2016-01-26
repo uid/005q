@@ -36,7 +36,7 @@ Template.ticketPanel.helpers({
   },
   unratedTicket: function(){
     // If there is an unrated ticket that this user owns
-    return Tickets.findOne({
+    return undefined; /*Tickets.findOne({
       userId: Meteor.user()._id,
       status: "COMPLETE",
       rating: null
@@ -44,7 +44,7 @@ Template.ticketPanel.helpers({
       sort: {
         timestamp: -1
       }
-    });
+    });*/
   },
   expirationFromNow: function(){
     var ticket = Tickets.findOne({
