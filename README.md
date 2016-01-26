@@ -2,32 +2,32 @@
 6.005 instructions
 -------------
 
-#. Browse to https://6005.mit.edu:444/certauth/certauth.php to get a fresh token/secret pair.
+1. Browse to https://6005.mit.edu:444/certauth/certauth.php to get a fresh token/secret pair.
 
-#. Save it to settings.json in this folder (the root 005q/ folder).
+2. Save it to settings.json in this folder (the root 005q/ folder).
 
-#. Copy the config template:
+3. Copy the config template:
 
     cp private/config.json.template private/config.json
 
-#. Edit private/config.json to make these changes:
+4. Edit private/config.json to make these changes:
 
     + change the admin password to what we usually use
     + put the usernames of all the staff in initialMentors, e.g. ["rcm", "maxg"]
 
-#. Run
+5. Run
 
       meteor deploy 005q.meteor.com --settings settings.json
 
 to start up the deployment.
 
-#. Run
+6. Run
 
       meteor authorized 005q.meteor.com --add mit6005
 
 to add the 6.005 organization as an authorized maintainer of the deployment. 
 
-#. Visit 005q.meteor.com and log in with your own MIT certificate.
+7. Visit 005q.meteor.com and log in with your own MIT certificate.
 
 
 HELPq
