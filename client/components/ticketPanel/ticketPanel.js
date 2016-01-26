@@ -66,6 +66,9 @@ Template.ticketPanel.helpers({
     }
 
     return moment(ticket.expiresAt).from(ReactiveNow.get());
+  },
+  requiresFields: function() {
+    return CONSTANTS.TICKET_PANEL_TOPIC || CONSTANTS.TICKET_PANEL_LOCATION || TICKET_PANEL_CONTACT;
   }
 });
 
