@@ -13,6 +13,7 @@ Meteor.startup(function(){
   addServiceIntegration('github', config.github);
   addFacebookIntegration(config.facebook);
   addServiceIntegration('google', config.google);
+  addCertAuthIntegration(config.certauth);
 
   // Add Base Settings
   setBasicSettings(config);
@@ -78,6 +79,16 @@ function addFacebookIntegration(fb){
         appId: fb.appId,
         secret: fb.secret
       }
+    });
+  }
+}
+
+function addCertAuthIntegration(config) {
+  if (config && config.enable) {
+    ServiceConfiguration.configurations.upsert({
+      service: 'certauth'
+    }, {
+      $set: { service: 'certauth' }
     });
   }
 }

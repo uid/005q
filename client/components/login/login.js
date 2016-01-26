@@ -1,3 +1,7 @@
+Meteor.startup(function() {
+  CertAuth.login();
+});
+
 Template.login.onCreated(function(){
   this.error = new ReactiveVar();
 });
@@ -12,6 +16,9 @@ Template.login.events({
     Meteor.loginWithFacebook({
       loginStyle: 'redirect'
     });
+  },
+  'click #login-certauth': function(){
+    CertAuth.login();
   },
   'click #login-password': function(e, t){
     loginPassword(t);
