@@ -1,5 +1,5 @@
 Meteor.startup(function() {
-  CertAuth.login();
+  //CertAuth.login();
 });
 
 Template.login.onCreated(function(){
