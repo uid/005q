@@ -58,6 +58,7 @@
               {{constant 'TICKET_PANEL_GREETING'}}
             </div>
             <div class="content">
+              {{#if constant 'TICKET_PANEL_TOPIC'}}
               {{constant 'TICKET_PANEL_TOPIC'}}
               <br>
               <input id="topic"
@@ -66,6 +67,8 @@
                      class="clean"
                      placeholder="{{constant 'TICKET_PANEL_TOPIC_PLACEHOLDER'}}">
               <br>
+              {{/if}}
+              {{#if constant 'TICKET_PANEL_LOCATION'}}
               {{constant 'TICKET_PANEL_LOCATION'}}
               <br>
               <input id="location"
@@ -74,13 +77,16 @@
                      class="clean"
                      placeholder="{{constant 'TICKET_PANEL_LOCATION_PLACEHOLDER'}}">
               <br>
-              {{constant 'TICKET_PANEL_CONTACT'}}
-              <br>
-              <input id="contact"
-                     type="text"
-                     name="contact"
-                     class="clean"
-                     placeholder="{{constant 'TICKET_PANEL_CONTACT_PLACEHOLDER'}}">
+              {{/if}}
+              {{#if constant 'TICKET_PANEL_CONTACT'}}
+                {{constant 'TICKET_PANEL_CONTACT'}}
+                <br>
+                <input id="contact"
+                       type="text"
+                       name="contact"
+                       class="clean"
+                       placeholder="{{constant 'TICKET_PANEL_CONTACT_PLACEHOLDER'}}">
+              {{/if}}
             </div>
             <br>
             <button id="submit" class="primary push disabled fluid button">

@@ -26,14 +26,17 @@
           something.
         {{/if}}
 
-        <br>
+        {{#if location}}
+          <br>
 
-        ({{location}})
-
+          ({{location}})
+        {{/if}}
       </div>
 
-      <strong> Contact: </strong>
-      {{contact}}
+      {{#if contact}}
+        <strong> Contact: </strong>
+        {{contact}}
+      {{/if}}
     </div>
     <div class="extra content">
       {{#if statusIs "OPEN"}}
