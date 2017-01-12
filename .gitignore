@@ -3,3 +3,4 @@
 private/config.json
 .sass-cache/
 settings.json
+node_modules/
