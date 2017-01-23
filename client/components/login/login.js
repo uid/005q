@@ -1,6 +1,11 @@
-Meteor.startup(function() {
-  CertAuth.login();
-});
+// this autologin (though recommended by CertAuth) causes a race condition -
+// if the user sees the "Log in with MIT Certificates" button and manages to 
+// push it before the autologin finishes, then the UI shows up apparently logged in
+// but with none of its buttons functional.
+// 
+// Meteor.startup(function() {
+//   CertAuth.login();
+// });
 
 Template.login.onCreated(function(){
   this.error = new ReactiveVar();
